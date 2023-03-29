@@ -1,0 +1,19 @@
+.wrapper{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgb(188, 208, 250);
+}
+
+.input{
+    display: flex;
+    width: 90%;
+    margin-top: 10px;
+}
+.button{
+    width: 200px;
+    margin: 0 auto;
+    height: 30px;
+}
