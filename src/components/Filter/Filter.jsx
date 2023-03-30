@@ -6,7 +6,7 @@ export const Filter = ({ filter, changeFilter }) => {
     <div className={css.wrapper}>
       <span>Find contacts by name</span>
       <input
-        onInput={e => changeFilter(e.target.value)}
+        onChange={changeFilter}
         value={filter}
         type="text"
       />
@@ -16,4 +16,5 @@ export const Filter = ({ filter, changeFilter }) => {
 
 Filter.propTypes = {
   filter: PropTypes.string.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
