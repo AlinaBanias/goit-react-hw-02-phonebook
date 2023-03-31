@@ -30,7 +30,9 @@ let SignupSchema = yup.object().shape({
 
 
 export class ContactForm extends Component {
-  handleSubmit = (values, {resetForm}) => {    this.props.onSubmit(values);
+  handleSubmit = (values, {resetForm}) => {    
+    this.props.handleAddContact(values);
+    console.log(values);
     resetForm(); 
    }
 
