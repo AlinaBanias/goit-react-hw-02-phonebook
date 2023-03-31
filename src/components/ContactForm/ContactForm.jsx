@@ -30,12 +30,10 @@ let SignupSchema = yup.object().shape({
 
 
 export class ContactForm extends Component {
-  handleSubmit = (e,values, {resetForm}) => {
-    e.preventDefault();
-    this.props.onSubmit(values);
+  handleSubmit = (values, {resetForm}) => {    this.props.onSubmit(values);
+    resetForm(); 
+   }
 
-    resetForm();
-  }
   render () {
   return (
     <Formik
@@ -43,7 +41,7 @@ export class ContactForm extends Component {
     onSubmit={this.handleSubmit}
     validationSchema={SignupSchema}
   >   
-  <Form autoComplete="off">
+  <Form>
       <label>
         Name
         <input type="text" name="name" required/>
