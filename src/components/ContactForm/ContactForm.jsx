@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import 'yup-phone';
 
@@ -44,13 +44,13 @@ export class ContactForm extends Component {
   <Form>
       <label>
         Name
-        <input type="text" name="name" required/>
+        <Field type="text" name="name" required/>
         <ErrorMessage name="name" component="span" />
       </label>
 
       <label>
         Number
-        <input type="tel" name="number" required />
+        <Field type="tel" name="number" required />
         <ErrorMessage name="number" component="span" />
       </label>
       
