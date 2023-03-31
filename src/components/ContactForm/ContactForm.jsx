@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Formik, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import 'yup-phone';
 
@@ -30,8 +30,8 @@ let SignupSchema = yup.object().shape({
 
 
 export class ContactForm extends Component {
-  handleSubmit = (values, {resetForm}) => {
-    values.preventDefault();
+  handleSubmit = (e,values, {resetForm}) => {
+    e.preventDefault();
     this.props.onSubmit(values);
 
     resetForm();
@@ -40,12 +40,13 @@ export class ContactForm extends Component {
   return (
     <Formik
     initialValues={initialValues}
+    onSubmit={this.handleSubmit}
     validationSchema={SignupSchema}
-  >
-    <form autoComplete="off"  onSubmit={this.handleSubmit}>
+  >   
+  <Form autoComplete="off">
       <label>
         Name
-        <input type="text" name="name" />
+        <input type="text" name="name" required/>
         <ErrorMessage name="name" component="span" />
       </label>
 
@@ -54,9 +55,9 @@ export class ContactForm extends Component {
         <input type="tel" name="number" required />
         <ErrorMessage name="number" component="span" />
       </label>
-
+      
       <button type="submit">Add contact</button>
-    </form>
+      </Form>
   </Formik>
   );
 }
