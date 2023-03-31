@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import 'yup-phone';
-import css from './ContactForm.module.css';
 
 const initialValues = { name: '', number: '' };
 

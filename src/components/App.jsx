@@ -16,12 +16,6 @@ export class App extends Component {
     filter: '',
  };
 
- handleInputChange = e => {
-  const { name, value } = e.currentTarget;
-  console.log(name);
-  this.setState({ [name]: value });
- };
-
  changeFilter = e => {
   this.setState({
     filter: e.currentTarget.value
@@ -46,7 +40,7 @@ export class App extends Component {
  };
 
  checkContact = checkedNameContact => {
-  const res = this.state.contacts.find(
+  return this.state.contacts.find(
     contact => contact.name === checkedNameContact
   );
  }
